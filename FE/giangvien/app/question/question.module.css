@@ -1,0 +1,664 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --border: #e4e9f2;
+  --text: #14213a;
+  --text-muted: #6b7690;
+  --text-faint: #9aa4ba;
+  --accent: #2f6bff;
+  --accent-soft: #eaf0ff;
+  --danger: #ef4444;
+  --live: #16a34a;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 28px;
+  background: #070b1c;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.topBarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 232px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+}
+
+.logoText {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  white-space: nowrap;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.logoText img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 0;
+}
+.topBarActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.topBarIconButton {
+  width: auto;
+  height: auto;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: ligatures;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+/* Đổi giao diện active giống hình ảnh */
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sidebarDivider {
+  margin: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.profileBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px 4px;
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.profileAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.profileName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.profileRole {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* ---------- Main ---------- */
+.main {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 28px 36px 48px;
+  background: #ffffff;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.headerTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.headerTitleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.liveTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--live);
+  white-space: nowrap;
+}
+
+.liveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--live);
+  flex-shrink: 0;
+}
+
+.sortSelect {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.emptyState {
+  padding: 32px 0;
+  color: var(--text-faint);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ---------- Danh sách lớp (màn hình chưa chọn lớp — full width) ---------- */
+.classListPanel {
+  width: 100%;
+}
+
+.classGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.classCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.classCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(47, 107, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.classCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.classCardCode {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.classCardName {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.classCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.classCardCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.classCardChevron {
+  color: var(--text-faint);
+}
+
+/* ---------- Bố cục sau khi chọn 1 lớp: 1 phần trái (lớp) + 2 phần phải (gom câu hỏi) ---------- */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Danh sách lớp thu gọn, hiện dọc bên trái */
+.classListPanelCompact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  position: sticky;
+  top: 0;
+}
+
+.classListCompact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.classCardCompact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.classCardCompact:hover {
+  border-color: var(--accent);
+}
+
+.classCardCompactActive {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.classCardCompactTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.classCardCompactCode {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.classCardCompactName {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.classCardCompactCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+/* Panel "Gom câu hỏi" bên phải */
+.groupingPanel {
+  min-width: 0;
+}
+
+.groupingPanelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.groupingPanelActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ---------- Group card (nhóm câu hỏi) ---------- */
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupCard {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.groupBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
+}
+
+.groupTopRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.groupHeadingLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.liveMiniPill {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--danger);
+  padding: 1px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.answeredPill {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--live);
+  background: #e8f8ef;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.groupTopic {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.groupMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.groupActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btnOutline:hover {
+  background: var(--bg);
+}
+
+.btnPrimary {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  filter: brightness(1.05);
+}
+
+.btnPrimary:disabled,
+.btnOutline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.questionBullets {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.questionBullets li {
+  display: flex;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.bulletDot {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.rawStudentName {
+  color: var(--text-faint);
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* ---------- Reply composer ---------- */
+.replyBox {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.replyLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.replyTextarea {
+  width: 100%;
+  min-height: 76px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--text);
+  outline: none;
+}
+
+.replyTextarea:focus {
+  border-color: var(--accent);
+}
+
+.replyFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.replyHint {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.replyFooterActions {
+  display: flex;
+  gap: 8px;
+}
+
+.sentNotice {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #e8f8ef;
+  color: var(--live);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+  }
+  .classListPanelCompact {
+    position: static;
+  }
+  .classListCompact {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .classCardCompact {
+    flex: 1 1 200px;
+  }
+}

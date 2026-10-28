@@ -1,0 +1,871 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #dbe3ef;
+  --text: #172033;
+  --text-muted: #62708a;
+  --text-faint: #8b98ad;
+  --accent: #2563eb;
+  --accent-soft: #e7efff;
+  --success: #22c55e;
+  --success-soft: #e8f8ef;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* ---------- Topbar (copy từ home.module.css) ---------- */
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bellButton {
+  border: 1px solid #263252;
+  background: #111a33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d3dcf0;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- Body ---------- */
+.body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+/* ---------- Sidebar (copy từ home.module.css) ---------- */
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarDivider {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Main ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 40px 40px;
+  background: #ffffff;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.breadcrumbItem {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.breadcrumbItem:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.breadcrumbSep {
+  color: var(--text-faint);
+}
+
+.breadcrumbCurrent {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ---------- Tiêu đề trang ---------- */
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.sectionLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.emptyText {
+  color: var(--text-faint);
+  font-size: 14px;
+  padding: 16px 0;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  filter: brightness(1.08);
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---------- Màn 1: Danh sách lớp ---------- */
+.classGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.classCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.classCardIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBlue {
+  background: #e7efff;
+  color: #2563eb;
+}
+
+.iconGreen {
+  background: #e6f9ef;
+  color: #16a34a;
+}
+
+.iconPurple {
+  background: #f1e9ff;
+  color: #8b5cf6;
+}
+
+.classCardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.classCardName {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.classCardCode {
+  margin: 2px 0 4px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.classCardStudents {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.classHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Màn 2: Danh sách bài giảng ---------- */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 42px;
+  padding: 0 13px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-faint);
+  background: var(--surface);
+  max-width: 360px;
+}
+
+.searchBox:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.searchBox input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+}
+
+.lectureList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lectureCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.lectureCardMain {
+  min-width: 0;
+}
+
+.lectureTitle {
+  margin: 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lectureTopic {
+  margin: 2px 0 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.lectureMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.lectureMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lectureCardActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.summaryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--success);
+  background: var(--success-soft);
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---------- Màn 3: Chi tiết tổng hợp bài giảng ---------- */
+.detailHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.detailMetaRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.detailMetaRow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.backLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- Tab bar ---------- */
+.tabBar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.tabItem {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tabItem:hover {
+  color: var(--text);
+}
+
+.tabItemActive {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.tabPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ---- Tóm tắt ---- */
+.summaryCard {
+  background: var(--accent-soft);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.summaryCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.summaryCardTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.langToggle {
+  display: inline-flex;
+  gap: 4px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 3px;
+}
+
+.langBtn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.langBtnActive {
+  background: var(--accent);
+  color: #fff;
+}
+
+.summaryText {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ---- Giải thích từ ngữ chuyên ngành (khung giống summaryCard, ngăn cách với Chủ đề chính) ---- */
+.glossaryCard {
+  background: var(--accent-soft);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.glossaryCardTitle {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.glossaryList {
+  display: flex;
+  flex-direction: column;
+}
+
+.glossaryItem {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.glossaryItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.glossaryItem:first-child {
+  padding-top: 0;
+}
+
+.glossaryTerm {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.glossaryDesc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- Kiến thức chính (grid card — vẫn giữ style phòng khi cần dùng lại) ---- */
+.conceptGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.conceptCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.conceptNumber {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.conceptTitle {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.conceptDesc {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---- Chủ đề ---- */
+.topicChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.topicChip {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.questionListHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* ---- Câu hỏi ---- */
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.questionItem {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.questionItemHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.questionIcon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.questionText {
+  flex: 1;
+  min-width: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.questionMeta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.answeredBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--success);
+  background: var(--success-soft);
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.questionGroupLabel {
+  font-size: 12px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.questionChevron {
+  color: var(--text-faint);
+  transition: transform 0.15s ease;
+}
+
+.questionChevronOpen {
+  transform: rotate(180deg);
+}
+
+.questionAnswer {
+  margin: 0;
+  padding: 0 16px 16px 42px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ---- Transcript ---- */
+.transcriptHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bilingualToggleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.toggle {
+  position: relative;
+  width: 38px;
+  height: 21px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 999px;
+  background: #cbd2e0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.toggle.toggleOn {
+  background: var(--accent);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.toggle.toggleOn .toggleThumb {
+  transform: translateX(17px);
+}
+
+.transcriptList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transcriptRow {
+  display: flex;
+  gap: 14px;
+}
+
+.transcriptTime {
+  flex-shrink: 0;
+  width: 44px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-faint);
+  padding-top: 1px;
+}
+
+.transcriptTextBlock {
+  flex: 1;
+  min-width: 0;
+}
+
+.transcriptEn {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.transcriptVi {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main {
+    padding: 20px;
+  }
+  .lectureCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .lectureCardActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

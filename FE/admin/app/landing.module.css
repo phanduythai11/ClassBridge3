@@ -1,0 +1,383 @@
+/* Đảm bảo toàn bộ ứng dụng bị khóa cứng trong 1 khung nhìn duy nhất */
+.container {
+  height: 100vh;
+  max-height: 100vh;
+  background-color: #060913;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-variant-ligatures: common-ligatures;
+  position: relative;
+  overflow: hidden; /* Cấm tuyệt đối cuộn trang */
+}
+
+/* Header thu gọn vừa phải */
+.header {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px -4px rgba(59, 130, 246, 0.4);
+}
+
+.logoText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.navLink {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+  opacity: 0.85;
+}
+
+.navLink:hover {
+  opacity: 1;
+  color: #60a5fa !important;
+}
+
+/* Nhóm nút Đăng nhập / Đăng ký */
+.authGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.loginBtn {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.signupBtn {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 6px 16px -3px rgba(37, 99, 235, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupBtn:hover {
+  transform: translateY(-1px);
+}
+
+/* Phần Main được co giãn linh hoạt bằng flex, giới hạn padding để không tràn */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background-color: rgba(30, 58, 138, 0.3);
+  color: #93c5fd;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+/* Thu nhỏ cỡ chữ tiêu đề để hoàn toàn vừa vặn trong 1 trang */
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.25rem;
+  }
+}
+
+.highlightText {
+  background: linear-gradient(135deg, #60a5fa 0%, #a5b4fc 50%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  max-width: 40rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.actionLink {
+  text-decoration: none;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 20px -4px rgba(37, 99, 235, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(30, 41, 59, 0.9);
+}
+
+.playIconWrapper {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: rgba(59, 130, 246, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+}
+
+/* Sidebar nổi thu gọn */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.sidebarIcon {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 9999px;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd5e1;
+  box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sidebarIcon:hover {
+  transform: scale(1.08);
+  background-color: rgba(30, 41, 59, 1);
+  color: #ffffff;
+}
+
+.sidebarIconBrain {
+  color: #c084fc;
+}
+
+.sidebarIconActive {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 12px -3px rgba(37, 99, 235, 0.5);
+  cursor: pointer;
+}
+
+.sidebarIconActive span {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Footer tối giản siêu gọn để không bị tràn màn hình */
+.footer {
+  width: 100%;
+  background-color: #04060d;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1rem 2rem;
+  z-index: 10;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.footerContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footerLogo {
+  width: 1.75rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.footerBrand p {
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footerColumn h3 {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footerColumn ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color 0.2s ease;
+}
+
+.footerColumn ul li a:hover {
+  color: #60a5fa;
+}
+
+.footerColumn ul li {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.footerCopyright {
+  text-align: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  color: #64748b;
+  font-size: 0.72rem;
+}

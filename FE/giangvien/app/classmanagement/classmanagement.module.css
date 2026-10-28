@@ -1,0 +1,705 @@
+.page {
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --surface-hover: #f1f4fa;
+  --border: #e4e9f2;
+  --text: #14213a;
+  --text-muted: #6b7690;
+  --text-faint: #9aa4ba;
+  --accent: #2f6bff;
+  --accent-soft: #eaf0ff;
+  --danger: #ef4444;
+  --live: #16a34a;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* ---------- Topbar ---------- */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 28px;
+  background: #070b1c;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.topBarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logoText {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  white-space: nowrap;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.topBarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notifyWrap {
+  position: relative;
+}
+
+.notifyButton {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.notifyButton:hover,
+.notifyButton[aria-expanded="true"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.notifyButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.notifyBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  background: var(--danger);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Dropdown thông báo ---------- */
+.notifyPanel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 30;
+  width: 360px;
+  max-width: calc(100vw - 24px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(20, 33, 58, 0.18);
+  overflow: hidden;
+}
+
+.notifyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.notifyTitle {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.notifyMarkAll {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notifyMarkAll:hover {
+  text-decoration: underline;
+}
+
+.notifyList {
+  max-height: 360px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.notifyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.notifyList li:last-child .notifyItem {
+  border-bottom: 0;
+}
+
+.notifyItem:hover {
+  background: var(--surface-hover);
+}
+
+.notifyItemUnread {
+  background: var(--accent-soft);
+}
+
+.notifyItemUnread:hover {
+  background: #dfe9ff;
+}
+
+.notifyIcon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.notifyItemUnread .notifyIcon {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.notifyBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.notifyText {
+  display: block;
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.notifyText strong {
+  font-weight: 700;
+}
+
+.notifyMeta {
+  display: block;
+  margin: 3px 0 0;
+  color: var(--text-faint);
+  font-size: 11.5px;
+}
+
+.notifyDot {
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.notifyEmpty {
+  padding: 28px 16px;
+  color: var(--text-faint);
+  font-size: 13px;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 232px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: ligatures;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+/* Đổi giao diện active giống hình ảnh */
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sidebarDivider {
+  margin: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.profileBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px 4px;
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.profileAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.profileName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.profileRole {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* ---------- Main ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 28px 36px 48px;
+}
+
+.panel {
+  width: 100%;
+  padding: 26px 28px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(20, 33, 58, 0.05);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.eyebrow {
+  margin: 0 0 7px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.panelHeader h1 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.liveBadge {
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #e8f8ef;
+  color: var(--live);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.exportButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--live);
+  border-radius: 8px;
+  background: #e8f8ef;
+  color: var(--live);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.exportButton:hover:not(:disabled) {
+  background: var(--live);
+  color: #ffffff;
+}
+
+.exportButton:focus-visible {
+  outline: 2px solid var(--live);
+  outline-offset: 2px;
+}
+
+.exportButton:disabled {
+  border-color: var(--border);
+  background: var(--bg);
+  color: var(--text-faint);
+  cursor: not-allowed;
+}
+
+/* Đã chỉnh sửa flex: 1 để giãn thanh tìm kiếm ra toàn bộ vùng trống */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1; 
+  min-width: 200px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-faint);
+  background: var(--surface);
+}
+
+.searchBox:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47, 107, 255, 0.1);
+}
+
+.searchBox input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+}
+
+.searchBox input::placeholder {
+  color: var(--text-faint);
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.panel table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+}
+
+.panel th,
+.panel td {
+  padding: 13px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.panel th {
+  color: var(--text-muted);
+  background: #fbfcfe;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.panel tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.panel tbody tr:hover {
+  background: #fbfcff;
+}
+
+.indexCell,
+.questionCell {
+  width: 58px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.panel td strong,
+.studentId {
+  display: block;
+}
+
+.panel td strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.studentId {
+  margin-top: 3px;
+  color: var(--text-faint);
+  font-size: 11px;
+}
+
+.status {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.joined {
+  background: #e8f8ef;
+  color: var(--live);
+}
+
+.notJoined {
+  background: #fff0f0;
+  color: #dc2626;
+}
+
+.timeCell {
+  color: var(--text-muted);
+}
+
+.emptyState {
+  padding: 32px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+/* ---------- Danh sách lớp ---------- */
+.classGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.classCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.classCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(47, 111, 237, 0.12);
+  transform: translateY(-1px);
+}
+
+.classCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.classCardCode {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.classCardName {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.classCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.classCardCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.classCardChevron {
+  color: var(--text-faint);
+}
+
+/* ---------- Nút quay lại danh sách lớp ---------- */
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding: 20px 14px 32px;
+  }
+
+  .panel {
+    padding: 20px 14px 16px;
+  }
+
+  .panelHeader {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  .headerActions {
+    align-self: flex-end;
+  }
+
+  .notifyPanel {
+    max-width: calc(100vw - 60px);
+  }
+
+  .searchBox {
+    flex: 1 1 100%;
+  }
+
+  .exportButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

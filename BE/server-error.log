@@ -1,0 +1,44 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 798-973-189
+127.0.0.1 - - [30/Sep/2026 18:38:43] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:38:43] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [30/Sep/2026 18:43:15] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+C:\Users\Admin\Downloads\hoctap-main\.venv\Lib\site-packages\jwt\api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 20 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+127.0.0.1 - - [30/Sep/2026 18:43:15] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:43:17] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:43:17] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+C:\Users\Admin\Downloads\hoctap-main\.venv\Lib\site-packages\jwt\api_jwt.py:370: InsecureKeyLengthWarning: The HMAC key is 20 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  decoded = self.decode_complete(
+127.0.0.1 - - [30/Sep/2026 18:43:17] "GET /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:43:17] "GET /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:43:37] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:43:37] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:21] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:21] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:23] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:23] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:23] "GET /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:45:23] "GET /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:17] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:17] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:18] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:18] "OPTIONS /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:18] "GET /api/auth/me HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 18:52:18] "GET /api/auth/me HTTP/1.1" 200 -
+ * Detected change in 'C:\\Users\\Admin\\Downloads\\hoctap-main\\BE\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 798-973-189
+127.0.0.1 - - [30/Sep/2026 19:12:37] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 19:12:38] "POST /api/auth/login HTTP/1.1" 401 -
+127.0.0.1 - - [30/Sep/2026 19:35:23] "OPTIONS /api/auth/forgot-password HTTP/1.1" 200 -
+[2026-09-30 19:35:23,799] WARNING in auth: Password reset link for tan@gmail.com: http://localhost:3000/reset-password?token=63oV0PYombPy3yWlFGBhSHLy2Bk96YaEkfDVntXIMu4
+127.0.0.1 - - [30/Sep/2026 19:35:23] "POST /api/auth/forgot-password HTTP/1.1" 200 -
+127.0.0.1 - - [30/Sep/2026 19:35:33] "OPTIONS /api/auth/forgot-password HTTP/1.1" 200 -
+[2026-09-30 19:35:33,444] WARNING in auth: Password reset link for tan@gmail.com: http://localhost:3000/reset-password?token=deEjSrQsp65nwWc1843KBWflO2lxeoVRzqA449GMIEk
+127.0.0.1 - - [30/Sep/2026 19:35:33] "POST /api/auth/forgot-password HTTP/1.1" 200 -

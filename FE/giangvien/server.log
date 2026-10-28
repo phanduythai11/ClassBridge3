@@ -1,0 +1,70 @@
+
+> my-app@0.1.0 dev
+> next dev -p 3001
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.1.190:3001
+✓ Ready in 3.7s
+✓ Running next.config.ts took 332ms
+Creating turbopack project {
+  dir: 'C:\\Users\\Admin\\Downloads\\hoctap-main\\FE\\giangvien',
+  testMode: true
+}
+
+ GET / 200 in 1052ms (next.js: 925ms, application-code: 128ms)
+ GET /login 200 in 70ms (next.js: 41ms, application-code: 30ms)
+ GET /home 200 in 141ms (next.js: 29ms, application-code: 112ms)
+ GET /register 200 in 276ms (next.js: 255ms, application-code: 21ms)
+ GET /register 200 in 27ms (next.js: 7ms, application-code: 20ms)
+ GET /auth-callback 200 in 241ms (next.js: 197ms, application-code: 45ms)
+ GET /home 200 in 31ms (next.js: 12ms, application-code: 18ms)
+ GET /auth-callback 200 in 39ms (next.js: 12ms, application-code: 26ms)
+ GET /home 200 in 36ms (next.js: 14ms, application-code: 22ms)
+ GET /room 200 in 43ms (next.js: 21ms, application-code: 22ms)
+ GET /room 200 in 19ms (next.js: 6ms, application-code: 13ms)
+ GET /question 200 in 43ms (next.js: 30ms, application-code: 13ms)
+ GET /dashboard 200 in 32ms (next.js: 19ms, application-code: 13ms)
+ GET /settings 200 in 35ms (next.js: 22ms, application-code: 13ms)
+ GET /dashboard 200 in 14ms (next.js: 3ms, application-code: 10ms)
+ GET /dashboard 200 in 117ms (next.js: 74ms, application-code: 43ms)
+ GET /dashboard 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /dashboard 200 in 36ms (next.js: 4ms, application-code: 32ms)
+ GET /dashboard 200 in 43ms (next.js: 4ms, application-code: 39ms)
+ GET /dashboard 200 in 73ms (next.js: 7ms, application-code: 66ms)
+ GET /dashboard 200 in 63ms (next.js: 14ms, application-code: 49ms)
+ GET /dashboard 200 in 43ms (next.js: 7ms, application-code: 36ms)
+ GET /dashboard 200 in 25ms (next.js: 7ms, application-code: 17ms)
+ GET /dashboard 200 in 40ms (next.js: 6ms, application-code: 35ms)
+ GET /dashboard 200 in 39ms (next.js: 6ms, application-code: 33ms)
+ GET /dashboard 200 in 40ms (next.js: 5ms, application-code: 35ms)
+ GET /dashboard 200 in 38ms (next.js: 6ms, application-code: 32ms)
+ GET /dashboard 200 in 42ms (next.js: 4ms, application-code: 38ms)
+ GET /dashboard 200 in 48ms (next.js: 7ms, application-code: 41ms)
+ GET /dashboard 200 in 29ms (next.js: 6ms, application-code: 24ms)
+ GET /dashboard 200 in 78ms (next.js: 10ms, application-code: 68ms)
+ GET /dashboard 200 in 82ms (next.js: 14ms, application-code: 68ms)
+ GET /dashboard 200 in 63ms (next.js: 8ms, application-code: 55ms)
+ GET /dashboard 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /dashboard 200 in 45ms (next.js: 5ms, application-code: 40ms)
+ GET /dashboard 200 in 62ms (next.js: 4ms, application-code: 57ms)
+ GET /dashboard 200 in 60ms (next.js: 13ms, application-code: 47ms)
+ GET /dashboard 200 in 46ms (next.js: 6ms, application-code: 40ms)
+ GET /dashboard 200 in 42ms (next.js: 5ms, application-code: 37ms)
+ GET /dashboard 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /dashboard 200 in 40ms (next.js: 4ms, application-code: 36ms)
+ GET /dashboard 200 in 45ms (next.js: 5ms, application-code: 40ms)
+ GET /dashboard 200 in 30ms (next.js: 4ms, application-code: 25ms)
+ GET /dashboard 200 in 42ms (next.js: 7ms, application-code: 36ms)
+ GET /dashboard 200 in 18ms (next.js: 5ms, application-code: 13ms)
+ GET /settings 200 in 24ms (next.js: 10ms, application-code: 15ms)
+ GET /question 200 in 20ms (next.js: 9ms, application-code: 11ms)
+ GET /home 200 in 23ms (next.js: 11ms, application-code: 12ms)
+ GET /forgot-password 500 in 1690ms (next.js: 1569ms, application-code: 121ms)
+ GET /forgot-password 200 in 98ms (next.js: 15ms, application-code: 83ms)
+ GET /forgot-password 200 in 27ms (next.js: 4ms, application-code: 23ms)
+ GET /login 200 in 30ms (next.js: 9ms, application-code: 22ms)
+ GET /forgot-password 200 in 29ms (next.js: 6ms, application-code: 22ms)
+ GET /reset-password 200 in 221ms (next.js: 197ms, application-code: 24ms)
+ GET /forgot-password 200 in 24ms (next.js: 5ms, application-code: 19ms)
+ GET /reset-password 200 in 30ms (next.js: 6ms, application-code: 24ms)

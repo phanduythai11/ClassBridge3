@@ -1,0 +1,22 @@
+
+> my-app@0.1.0 dev
+> next dev -p 3000
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.190:3000
+✓ Ready in 3.7s
+✓ Running next.config.ts took 334ms
+Creating turbopack project {
+  dir: 'C:\\Users\\Admin\\Downloads\\hoctap-main\\FE\\admin',
+  testMode: true
+}
+
+ GET /auth-callback 200 in 574ms (next.js: 416ms, application-code: 158ms)
+ GET /forgot-password 200 in 743ms (next.js: 662ms, application-code: 82ms)
+ GET /forgot-password 200 in 41ms (next.js: 6ms, application-code: 35ms)
+ GET /login 200 in 201ms (next.js: 146ms, application-code: 56ms)
+ GET /forgot-password 200 in 26ms (next.js: 5ms, application-code: 20ms)
+ GET /reset-password 200 in 232ms (next.js: 210ms, application-code: 23ms)
+ GET /forgot-password 200 in 25ms (next.js: 6ms, application-code: 19ms)
+ GET /reset-password 200 in 26ms (next.js: 6ms, application-code: 19ms)

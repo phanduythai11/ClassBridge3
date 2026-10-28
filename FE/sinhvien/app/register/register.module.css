@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #070b1c;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #CAC3D8;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  background-color: rgba(19, 19, 20, 0.45);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(124, 92, 252, 0.14);
+  border-radius: 1.25rem;
+  padding: 2rem 2.1rem 1.9rem;
+  box-sizing: border-box;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: #8b8fae;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f3f2ff;
+}
+
+.title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #8b8fae;
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.error {
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  background-color: rgba(248, 113, 113, 0.1);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  color: #fca5a5;
+}
+
+.formGroup {
+  margin-bottom: 0.85rem;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1rem;
+  color: #6b7094;
+  pointer-events: none;
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 214, 0.16);
+  border-radius: 999px;
+  padding: 0.68rem 1rem 0.68rem 2.6rem;
+  font-size: 0.87rem;
+  font-family: 'Inter', sans-serif;
+  color: #f3f2ff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.input::placeholder {
+  color: #5e6389;
+}
+
+.input:focus {
+  border-color: #7C5CFC;
+  background-color: rgba(124, 92, 252, 0.08);
+}
+
+.inputToggle {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #6b7094;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.inputToggle:hover {
+  color: #a6abc9;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 1rem 0 1.3rem;
+  font-size: 0.8rem;
+  color: #8b8fae;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.termsCheckbox {
+  margin-top: 0.15rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  accent-color: #7C5CFC;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.link {
+  color: #4CD6FB;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.signInText {
+  font-size: 0.8rem;
+  color: #8b8fae;
+  white-space: nowrap;
+}
+
+.submitBtn {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7C5CFC 0%, #4CD6FB 100%);
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.submitBtn:hover {
+  filter: brightness(1.08);
+}
+
+.submitBtn:active {
+  transform: translateY(1px);
+}
+
+.submitBtn:disabled {
+  background: #3c3d5c;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.6rem 0 1.1rem;
+  color: #5e6389;
+  font-size: 0.76rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed rgba(148, 163, 214, 0.22);
+}
+
+.socialRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+/* Nút mạng xã hội: nền trắng đồng nhất để logo gốc (nhiều màu / đen / có sẵn vòng tròn riêng) đều nổi rõ và nhất quán, thay vì nền gradient tím-cyan cũ vốn chỉ hợp với icon trắng vẽ tay. */
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 214, 0.18);
+  border-radius: 999px;
+  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.socialBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -4px rgba(124, 92, 252, 0.4);
+}
+
+.socialIcon {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 1.75rem 1.4rem 1.6rem;
+  }
+  .actionRow {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .submitBtn {
+    width: 100%;
+  }
+  .signInText {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submitBtn,
+  .socialBtn,
+  .input,
+  .closeBtn {
+    transition: none;
+  }
+}
+
+.roleSelector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.roleButton {
+  border: 1px solid rgba(148, 163, 214, 0.24);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #aeb3ce;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.roleButton:hover {
+  border-color: #7c5cfc;
+  color: #ffffff;
+}
+
+.roleButtonActive {
+  border-color: #7c5cfc;
+  background: rgba(124, 92, 252, 0.18);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(124, 92, 252, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roleButton { transition: none; }
+}
+
+
+.successToast {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(52, 211, 153, 0.34);
+  border-radius: 0.85rem;
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.72), rgba(15, 23, 42, 0.92));
+  color: #d1fae5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.12);
+  animation: successToastIn 0.24s ease-out both;
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 1.6rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: #10b981;
+  color: #052e2b;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+@keyframes successToastIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .successToast { animation: none; }
+}

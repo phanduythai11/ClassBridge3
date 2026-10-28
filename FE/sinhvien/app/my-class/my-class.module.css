@@ -1,0 +1,213 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #e2e8f0;
+  --text: #172033;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --accent: #2563eb;
+  --accent-soft: #e7efff;
+  --success: #22c55e;
+  --success-soft: #dcfce7;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* ================= BỐ CỤC CHUNG (Kế thừa từ file mẫu) ================= */
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.logoArea { display: flex; align-items: center; }
+.logoText { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: bold; color: #ffffff; }
+.logoText img { width: 32px; height: 32px; object-fit: contain; }
+.topbarActions { display: flex; align-items: center; gap: 12px; }
+.bellButton { border: 1px solid #263252; background: #111a33; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: #d3dcf0; cursor: pointer; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); }
+
+.body {
+  display: flex;
+  flex-direction: row; 
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  overflow-y: auto; /* Cho phép sidebar cuộn riêng nếu menu quá dài */
+}
+
+.navMenu { display: flex; flex-direction: column; gap: 4px; }
+.sidebarDivider { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.navItem { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: none; border-radius: 8px; background: transparent; color: var(--text-muted); font-size: 14px; cursor: pointer; transition: 0.15s; }
+.navItem:hover { background: var(--surface-hover); color: var(--text); }
+.navItemActive { background: var(--accent-soft); color: var(--accent); }
+
+.main {
+   flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 32px 40px 40px;
+  background: #ffffff; 
+}
+
+.headerArea {
+  margin-bottom: 28px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.pageSubtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.classList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.classCard {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.className {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.classCode {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.statusActive {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--success-soft);
+  color: var(--success);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--success);
+}
+
+.instructorRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.instructorAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.instructorName {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border);
+  margin-bottom: 20px;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lastSession {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.lastSessionHighlight {
+  color: #334155;
+  font-weight: 600;
+}
+
+.enterBtn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.15s;
+}
+
+.enterBtn:hover {
+  opacity: 0.9;
+}

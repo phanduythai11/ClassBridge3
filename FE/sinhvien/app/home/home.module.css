@@ -1,0 +1,630 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #dbe3ef;
+  --text: #172033;
+  --text-muted: #62708a;
+  --text-faint: #8b98ad;
+  --accent: #2563eb;
+  --accent-soft: #e7efff;
+  --success: #22c55e;
+  --success-soft: #e8f8ef;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* Hàng chứa Sidebar + Main, nằm dưới thanh topbar full-width */
+.body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.active:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.sidebarDivider {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Main content ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 32px 40px 40px;
+  background: #ffffff;
+}
+
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bellButton {
+  border: 1px solid #263252;
+  background: #111a33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d3dcf0;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- Lời chào ---------- */
+.greetingTitle {
+  font-size: 24px;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.greetingSubtitle {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  font-size: 15px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.joinGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.joinCardPrimary,
+.joinCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.joinCardPrimary {
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+}
+
+.joinCard {
+  background: var(--surface-hover);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.joinIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.joinCardPrimary .joinIconWrap {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.joinCard .joinIconWrap {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.joinTitle {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.joinSubtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.joinCardPrimary .joinSubtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Danh sách lớp học ---------- */
+.classBox {
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.classBoxHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewAll {
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.tab {
+  border: none;
+  background: #ffffff;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--accent);
+  color: #fff;
+}
+
+.emptyText {
+  color: var(--text-faint);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.classCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 8px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.classCard:last-child {
+  margin-bottom: 0;
+}
+
+.classIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.classInfo {
+  flex: 1;
+}
+
+.classTitle {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.classInstructor {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.classMeta {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.statusOngoing,
+.statusUpcoming {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.statusOngoing {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.statusUpcoming {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.joinScreen {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.joinScreenTitle {
+  align-self: flex-start;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+/* ---- Khung quét QR (giống ảnh 1) ---- */
+.scanBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #05070f;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanCorner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--accent);
+}
+
+.scanCornerTL {
+  top: 18px;
+  left: 18px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 6px 0 0 0;
+}
+
+.scanCornerTR {
+  top: 18px;
+  right: 18px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 6px 0 0;
+}
+
+.scanCornerBL {
+  bottom: 18px;
+  left: 18px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 6px;
+}
+
+.scanCornerBR {
+  bottom: 18px;
+  right: 18px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 6px 0;
+}
+
+.scanCameraCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanHint {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---- Thẻ "Nhập mã lớp" (bố cục giống ảnh 2 - Zoom Join meeting) ---- */
+.modalCard {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0 24px 24px;
+  overflow: hidden;
+}
+
+.modalTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -24px 20px;
+  padding: 12px 16px;
+  background: var(--surface-hover);
+  border-bottom: 1px solid var(--border);
+}
+
+.modalTopBarBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.modalTopBarLogo {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.modalCloseBtn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+}
+
+.modalTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+/* Ô mã lớp học — có icon # bên trái, chevron trang trí bên phải */
+.selectField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  background: var(--bg);
+}
+
+.selectFieldIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.selectFieldInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.selectFieldChevron {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Ô tên của bạn — nhãn nhỏ nổi trên viền, giống Zoom */
+.nameField {
+  position: relative;
+  margin-bottom: 18px;
+  margin-top: 10px;
+}
+
+.nameFieldLabel {
+  position: absolute;
+  top: -9px;
+  left: 10px;
+  background: var(--surface);
+  padding: 0 4px;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.nameFieldInput {
+  width: 100%;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancelBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.joinBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.joinBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

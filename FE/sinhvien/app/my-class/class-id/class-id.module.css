@@ -1,0 +1,194 @@
+.detailContainer {
+  width: 100%;
+  max-width: 1100px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.backLink:hover {
+  color: #2563eb;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.detailAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 22px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailTitle {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.detailSubtitle {
+  margin: 0;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.currentSessionCard {
+  background: #f4f8ff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.sessionBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.currentSessionText {
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fee2e2;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+.currentSessionTitle {
+  margin: 0 0 20px 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.joinSessionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.joinSessionBtn:hover {
+  opacity: 0.9;
+}
+
+.previousSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.previousTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.previousList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.previousItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.previousItem:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.previousItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weekBadge {
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.previousItemTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.chevronIcon {
+  color: #94a3b8;
+}

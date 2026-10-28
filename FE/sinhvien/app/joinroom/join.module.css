@@ -1,0 +1,481 @@
+/* Bảng màu nền tối theo yêu cầu (#070b1c) */
+.page {
+  --bg: #070b1c;
+  --surface: #10162c;
+  --surface-hover: #171f3a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f2f4fa;
+  --text-muted: #9aa3b8;
+  --text-faint: #6b7280;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.16);
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.14);
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 220px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+}
+
+.navItemActive {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* ---------- Main content ---------- */
+.main {
+  flex: 1;
+  padding: 24px 40px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.bellButton {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- Lời chào ---------- */
+.greetingTitle {
+  font-size: 22px;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.greetingSubtitle {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+/* ---------- Thẻ tham gia lớp học (giống bố cục ảnh mẫu) ---------- */
+.joinGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.joinCardPrimary,
+.joinCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.joinCardPrimary {
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+}
+
+.joinCard {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.joinIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.joinCardPrimary .joinIconWrap {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.joinCard .joinIconWrap {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.joinTitle {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.joinSubtitle {
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.joinCardPrimary .joinSubtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Danh sách lớp học ---------- */
+.classBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.classBoxHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewAll {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.tab {
+  border: none;
+  background: var(--surface-hover);
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--accent);
+  color: #fff;
+}
+
+.emptyText {
+  color: var(--text-faint);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.classCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.classCard:first-of-type {
+  border-top: none;
+}
+
+.classIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.classInfo {
+  flex: 1;
+}
+
+.classTitle {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.classInstructor {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.classMeta {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.statusOngoing,
+.statusUpcoming {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.statusOngoing {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.statusUpcoming {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* =========================================================
+   Màn hình "Tham gia lớp học" (quét QR / nhập mã) — full trang,
+   thay thế hẳn dashboard, không phải tab.
+   ========================================================= */
+
+.joinScreen {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinScreenHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.joinScreenTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---- Khung quét QR ---- */
+.scanBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #05070f;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanCorner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--accent);
+}
+
+.scanCornerTL {
+  top: 18px;
+  left: 18px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 6px 0 0 0;
+}
+
+.scanCornerTR {
+  top: 18px;
+  right: 18px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 6px 0 0;
+}
+
+.scanCornerBL {
+  bottom: 18px;
+  left: 18px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 6px;
+}
+
+.scanCornerBR {
+  bottom: 18px;
+  right: 18px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 6px 0;
+}
+
+.scanCameraCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanHint {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ---- Thẻ nhập mã lớp (giống Zoom "Join meeting") ---- */
+.codeCard {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.codeCardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+.codeLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.codeInput {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.codeInput:focus {
+  border-color: var(--accent);
+}
+
+.codeCardActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.cancelBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.joinBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.joinBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

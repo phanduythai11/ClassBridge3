@@ -1,0 +1,954 @@
+.page {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #e1e6f0;
+  --text: #172033;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.12);
+  --success: #22c55e;
+  --success-soft: rgba(34, 197, 94, 0.14);
+
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+.appShell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topBanner {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.topBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topBannerLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #070b1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.topBannerBrand {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.topBannerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBannerIconBtn {
+  border: 1px solid #263252;
+  background: #111a33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5b93e;
+  cursor: pointer;
+}
+
+.topBannerBellIcon {
+  color: inherit;
+}
+
+.topBannerAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  padding: 0 8px 24px;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Alias — page.tsx đang dùng styles.active cho nút Home thay vì navItemActive */
+.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sidebarDivider {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 1.75rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--bg);
+}
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.bellButton {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.classCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background-color: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.classCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.classAvatar {
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.7rem;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.classTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.classMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.classMetaDot {
+  color: #cbd5e1;
+}
+
+.statusBadge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.statusLive {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.statusDot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ===================== DANH SÁCH LỚP HỌC ĐÃ THAM GIA ===================== */
+.classListGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.classListCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+  padding: 1.1rem 1.2rem;
+  background-color: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 1rem;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.classListCard:hover {
+  border-color: #2f6fed;
+  box-shadow: 0 6px 18px rgba(47, 111, 237, 0.12);
+  transform: translateY(-1px);
+}
+
+.classListCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.classListCardCode {
+  color: #6b7690;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.classListCardName {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.classListCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+/* ===================== NÚT QUAY LẠI DANH SÁCH LỚP ===================== */
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: #2f6fed;
+}
+
+/* ===================== TABS CHÍNH ===================== */
+.mainTabs {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.3rem;
+  background-color: #eef1f8;
+  border-radius: 0.8rem;
+  width: fit-content;
+}
+
+.mainTabBtn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  font-size: 0.83rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mainTabBtn:hover {
+  color: #1e293b;
+}
+
+.mainTabBtnActive {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+/* ===================== ĐẶT CÂU HỎI ===================== */
+.card {
+  padding: 1.2rem 1.4rem;
+  background-color: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.cardTitle {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.questionTextarea {
+  width: 100%;
+  min-height: 4.5rem;
+  resize: vertical;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #dde1ee;
+  border-radius: 0.7rem;
+  background-color: #f8f9fc;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.questionTextarea::placeholder {
+  color: #94a3b8;
+}
+
+.questionTextarea:focus {
+  border-color: #60a5fa;
+  background-color: #ffffff;
+}
+
+.questionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.langGroup {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.langBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #dde1ee;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.langBtn:hover {
+  border-color: #93c5fd;
+}
+
+.langBtnActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.submitBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.7rem;
+  border: none;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===================== CÂU HỎI CỦA TÔI ===================== */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.filterTabs {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  background-color: #eef1f8;
+  border-radius: 0.7rem;
+}
+
+.filterTabBtn {
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: none;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.filterTabBtnActive {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.questionCard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background-color: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 0.9rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.questionLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.groupBadge {
+  align-self: flex-start;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.questionText {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.questionMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.langTag {
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.3rem;
+  border: 1px solid #dde1ee;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.66rem;
+}
+
+.answerBadge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.answerBadgeDone {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.answerBadgePending {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.emptyState {
+  padding: 1.5rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  background-color: #ffffff;
+  border: 1px dashed #dde1ee;
+  border-radius: 0.9rem;
+}
+
+/* ===================== NHÓM CÂU HỎI ===================== */
+.groupsToolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.groupsFilterSelect {
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #dde1ee;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.groupsFilterSelect:focus {
+  border-color: #60a5fa;
+}
+
+.iconBtn {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  border: 1px solid #dde1ee;
+  background-color: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.iconBtn:hover {
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.groupCard {
+  background-color: #ffffff;
+  border: 1px solid #e7e9f2;
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.groupCardHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.1rem;
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  color: #1e293b;
+}
+
+.groupIndexBadge {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.groupTopic {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.groupCountBadge {
+  flex-shrink: 0;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: #eef1f8;
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.groupBody {
+  padding: 0 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #eef1f8;
+  padding-top: 0.9rem;
+}
+
+.groupSubheading {
+  margin: 0.5rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mainQuestionBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.relatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.relatedQuestionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.8rem;
+  background-color: #f8f9fc;
+  border: 1px solid #eef1f8;
+  border-radius: 0.6rem;
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+.viewAllBtn {
+  align-self: center;
+  margin-top: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #dde1ee;
+  background-color: #ffffff;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.viewAllBtn:hover {
+  background-color: #eff6ff;
+}
+
+.answerSection {
+  margin-top: 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #eef1f8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.answerSectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.translationToggleLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 2.2rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #cbd5e1;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.15s ease;
+}
+
+.toggleSwitchOn {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: transform 0.15s ease;
+}
+
+.toggleSwitchOn .toggleKnob {
+  transform: translateX(0.95rem);
+}
+
+.answerLangChips {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.answerText {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: #1e293b;
+}
+
+.answerTranslation {
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #eef1f8;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 860px) {
+  .sidebar {
+    width: 4.5rem;
+    align-items: center;
+  }
+  .sidebarLogoText,
+  .navItem span {
+    display: none;
+  }
+  .navItem {
+    justify-content: center;
+    padding: 0.6rem;
+  }
+  .main {
+    padding: 1.25rem 1rem 2.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .classCard,
+  .questionCard {
+    flex-direction: column;
+  }
+  .questionFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .submitBtn {
+    justify-content: center;
+  }
+}

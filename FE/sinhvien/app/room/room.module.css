@@ -1,0 +1,639 @@
+.container {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #060913;
+  color: #ffffff;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  overflow: hidden;
+}
+
+/* ===================== TOP BAR ===================== */
+.topBar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #04060d;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Logo đã được xử lý sẵn (crop + nền trong suốt) ở file /public/classbridge-logo.png,
+   nên ở đây chỉ cần giới hạn kích thước hiển thị. */
+.logo {
+  width: 2.1rem;
+  height: 2.1rem;
+  object-fit: contain;
+  display: block;
+}
+
+.brandName {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.brandAccent {
+  color: #60a5fa;
+}
+
+.classInfo {
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 0;
+  align-items: center;
+}
+
+.className {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classCode {
+  font-size: 0.72rem;
+  color: #8b93b0;
+}
+
+/* Dải camera nhỏ của người tham gia, nằm dưới header */
+.cameraBar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #04060d;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+.miniTile {
+  position: relative;
+  flex-shrink: 0;
+  width: 8rem;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #10162b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.miniVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1); /* hiệu ứng gương giống camera trước */
+}
+
+.hidden {
+  display: none;
+}
+
+.miniAvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.miniName {
+  position: absolute;
+  left: 0.2rem;
+  bottom: 0.15rem;
+  font-size: 0.55rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0 0.2rem;
+  border-radius: 0.15rem;
+  max-width: calc(100% - 0.4rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.miniMuteIcon {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.15rem;
+  color: #f87171;
+}
+
+.moreTile {
+  flex-shrink: 0;
+  width: 3.6rem;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #10162b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.75rem;
+  color: #8b93b0;
+}
+
+/* Tài khoản người dùng hiện tại — lấy từ currentUser (xem TODO trong page.tsx) */
+.accountBadge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.accountBadge:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.avatarCircle {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  flex-shrink: 0;
+}
+
+.accountName {
+  font-size: 0.8rem;
+  font-weight: 500;
+  max-width: 8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accountMenu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 9rem;
+  background: #10162b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 30;
+}
+
+.accountMenuItem {
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accountMenuItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===================== MAIN AREA ===================== */
+.mainArea {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  padding: 0.75rem;
+  gap: 0.75rem;
+}
+
+.stage {
+  flex: 1;
+  min-width: 0;
+  border-radius: 0.9rem;
+  background-color: #0b0f20;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stageVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000000;
+}
+
+.stagePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: #4b5468;
+  font-size: 0.85rem;
+}
+
+.captionPanel {
+  flex-shrink: 0;
+  width: 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.captionBox {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0b0f20;
+  overflow: hidden;
+}
+
+.captionHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #93c5fd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.captionBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.captionLine {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.captionEmpty {
+  margin: 0;
+  font-size: 1rem;
+  color: #4b5468;
+  font-style: italic;
+}
+
+/* Panel trượt: Participants / Message dùng chung khung */
+.sidePanel {
+  flex-shrink: 0;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #0b0f20;
+  overflow: hidden;
+}
+
+.sidePanelHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidePanelHeader h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sidePanelHeader button {
+  background: none;
+  border: none;
+  color: #8b93b0;
+  cursor: pointer;
+  display: flex;
+}
+
+.sidePanelHeader button:hover {
+  color: #ffffff;
+}
+
+.participantList {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.participantItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.participantItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.participantItem span {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.participantIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #8b93b0;
+  flex-shrink: 0;
+}
+
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.7rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.chatMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.chatSender {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.chatText {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.chatInputRow {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chatInput {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+  outline: none;
+}
+
+.chatInput:focus {
+  border-color: #60a5fa;
+}
+
+.chatInput::placeholder {
+  color: #5e6389;
+}
+
+.chatSendBtn {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chatSendBtn:hover {
+  filter: brightness(1.1);
+}
+
+.toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #04060d;
+}
+
+.toolBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 4.2rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.7rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-size: 0.68rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.toolBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.toolBtnOff {
+  background: rgba(239, 68, 68, 0.16);
+  color: #fca5a5;
+}
+
+.toolBtnOff:hover {
+  background: rgba(239, 68, 68, 0.24);
+}
+
+.toolBtnActive {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: #ffffff;
+}
+
+.leaveBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 4.2rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.7rem;
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.leaveBtn:hover {
+  background: #b91c1c;
+}
+
+@media (max-width: 900px) {
+  .captionPanel {
+    display: none;
+  }
+  .cameraBar {
+    display: none;
+  }
+  .classInfo {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .brandName {
+    display: none;
+  }
+  .accountName {
+    display: none;
+  }
+  .sidePanel {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    z-index: 40;
+    border-radius: 0;
+  }
+  .toolBtn span,
+  .leaveBtn span {
+    display: none;
+  }
+  .toolBtn,
+  .leaveBtn {
+    min-width: 2.6rem;
+  }
+}
+.leaveWrapper {
+  position: relative;
+}
+
+.leaveMenu {
+  position: absolute;
+  bottom: 130px; /* hiện phía trên nút */
+  left: 66%;
+  transform: translateX(-50%);
+  width: 200px;
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+
+.leaveMenu::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #1e1e1e;
+}
+.leaveMeetingBtn {
+  border: none;
+  background: #ef2d2d;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cancelLeaveBtn {
+  border: none;
+  background: #444;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.endMeetingBtn:hover {
+  background: #d91d1d;
+}
+.leaveMeetingBtn:hover {
+  background: #555;
+}

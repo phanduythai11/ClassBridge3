@@ -1,0 +1,262 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #171f3a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f2f4fa;
+  --text-muted: #aab0c4;
+  --text-faint: #7c8296;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.16);
+  --danger: #ef4444;
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font-geist-sans), sans-serif;
+  font-variant-ligatures: common-ligatures;
+  color: var(--text);
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 240px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+}
+
+.navItemActive {
+  background: var(--accent);
+  color: #ffffff;
+}
+.logoArea {
+  display: flex;
+  align-items: center;
+  padding: 0 8px 24px;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.logoText img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  mix-blend-mode: lighten;
+}
+/* ---------- Main content ---------- */
+.main {
+  flex: 1;
+  padding: 24px 40px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.formCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 16px 0 6px;
+}
+
+.label:first-child {
+  margin-top: 0;
+}
+
+.required {
+  color: var(--danger);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+  color-scheme: dark;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent);
+  color: white;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 70px;
+  color: white;
+}
+
+/* Ô mã lớp: input read-only + nút làm mới */
+.codeRow {
+  display: flex;
+  gap: 8px;
+}
+
+.codeRow .input {
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: transparent;
+}
+
+.regenerateBtn {
+  flex-shrink: 0;
+  width: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.regenerateBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.helperText {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 6px 0 0;
+}
+
+/* Hàng thời gian: ngày + giờ bắt đầu + giờ kết thúc */
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.timeDash {
+  color: var(--text-muted);
+}
+
+/* Nút tạo lớp học */
+.createBtn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.createBtn:hover {
+  filter: brightness(1.08);
+}
+
+/* Khối thông tin lớp học (mã + QR) */
+.infoBox {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.infoTitle {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.infoLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+
+.infoCode {
+  color: var(--text);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.infoHint {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.qrWrap {
+  flex-shrink: 0;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+}

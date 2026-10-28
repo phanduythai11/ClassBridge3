@@ -1,0 +1,405 @@
+.page {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #dbe3ef;
+  --text: #172033;
+  --text-muted: #62708a;
+  --text-faint: #8b98ad;
+  --accent: #2563eb;
+  --accent-soft: #e7efff;
+  --success: #22c55e;
+  --success-soft: #e8f8ef;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #f4f6fb;
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* ---------- Topbar (copy từ dashboard.module.css để đồng bộ bố cục) ---------- */
+.topbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bellButton {
+  border: 1px solid #263252;
+  background: #111a33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d3dcf0;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ---------- Body (Sidebar + Main) ---------- */
+.body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+/* ---------- Sidebar (copy từ dashboard.module.css) ---------- */
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarDivider {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ---------- Main content ---------- */
+.main {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f4f6fb;
+}
+
+/* Vùng cuộn riêng — chỉ phần này cuộn, footer bên dưới đứng yên */
+.mainScroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 28px 40px 20px;
+}
+
+/* ---------- Settings cards ---------- */
+.settingsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.settingCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.settingCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionIconWrap {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingCardTitle {
+  margin: 0 0 3px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.settingCardSubtitle {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.settingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.settingRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.settingRowText {
+  min-width: 0;
+}
+
+.settingRowLabel {
+  margin: 0 0 3px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.settingRowDesc {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.settingRowControl {
+  flex-shrink: 0;
+}
+
+/* ---------- Select field (dropdown ngôn ngữ / múi giờ / kiểu phụ đề) ---------- */
+.selectControl {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 168px;
+  padding: 8px 30px 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.selectControl:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.selectControlIcon {
+  flex-shrink: 0;
+  color: var(--accent);
+  display: flex;
+}
+
+.selectControlInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.selectControlChevron {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+/* ---------- Toggle switch ---------- */
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 999px;
+  background: #cbd2e0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.toggle.toggleOn {
+  background: var(--accent);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease;
+}
+
+.toggle.toggleOn .toggleThumb {
+  transform: translateX(18px);
+}
+
+/* ---------- Footer hành động — đứng cố định dưới đáy .main, không cuộn theo nội dung ---------- */
+.settingsFooter {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 40px;
+  background: #f4f6fb;
+  border-top: 1px solid var(--border);
+}
+
+.resetBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text-muted);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.saveBtn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .mainScroll {
+    padding: 20px;
+  }
+  .settingsFooter {
+    padding: 12px 20px;
+  }
+  .settingRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .settingRowControl {
+    width: 100%;
+  }
+  .selectControl {
+    width: 100%;
+  }
+}

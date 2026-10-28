@@ -1,0 +1,499 @@
+.appShell {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --surface-hover: #eef3fb;
+  --border: #e1e6f0;
+  --text: #172033;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.12);
+  --success: #22c55e;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: ligatures;
+  color: var(--text);
+}
+
+/* =========================================================
+   TOPBAR — cùng màu (#070b1c) + kích thước (64px) như 2 file mẫu
+   ========================================================= */
+.topBanner {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 24px;
+  background: #070b1c;
+}
+
+.topBannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topBannerLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #070b1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.topBannerBrand {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.topBannerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topBannerIconBtn {
+  border: 1px solid #263252;
+  background: #111a33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5b93e;
+  cursor: pointer;
+}
+
+.topBannerBellIcon {
+  color: inherit;
+}
+
+.topBannerAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.logoText img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+/* Hàng chứa Sidebar + Main, nằm dưới topBanner */
+.page {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* =========================================================
+   SIDEBAR — cùng màu (trắng) + kích thước (215px) như 2 file mẫu
+   ========================================================= */
+.sidebar {
+  width: 215px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navItem:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.navItemActive {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.navItemActive:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sidebarDivider {
+  margin: 0.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+.main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 1.5rem 1.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+/* Thanh thông tin buổi học (giống pattern .classCard trong file mẫu) */
+.sessionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.sessionBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.offlineTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.sessionTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sessionTimer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================
+   THANH NGHE (audio-only, không có khung video vì học offline)
+   ========================================================= */
+.audioBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.9rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+}
+
+.audioPlayBtn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.audioPlayBtn:hover {
+  filter: brightness(1.08);
+}
+
+.audioProgressTrack {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.audioProgressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.audioTime {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.audioVolumeBtn {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.audioVolumeBtn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* =========================================================
+   NGHE - DỊCH: 2 cột cố định EN | VI (không phải nút chuyển đổi)
+   ========================================================= */
+.translatePanel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.translateHeader {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr;
+  gap: 16px;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.translateColLabel {
+  grid-column: span 1;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.translateHeader .translateColLabel:first-of-type {
+  grid-column: 2;
+}
+
+.translateBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.4rem 1.2rem 1rem;
+}
+
+.translateRow {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr;
+  gap: 16px;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.translateRow:last-child {
+  border-bottom: none;
+}
+
+.translateTime {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  padding-top: 2px;
+}
+
+.translateEn {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.translateVi {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   NÚT KẾT THÚC — góc phải phía dưới
+   ========================================================= */
+.endButton {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.endButton:hover {
+  filter: brightness(1.08);
+}
+
+/* =========================================================
+   MODAL: xác nhận / nhập tên lớp
+   ========================================================= */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modalCard {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.modalTitle {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.modalText {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 18px;
+}
+
+.modalInput:focus {
+  border-color: var(--accent);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modalBtnOutline {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.modalBtnPrimary {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.modalBtnPrimary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
