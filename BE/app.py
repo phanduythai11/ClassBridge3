@@ -1,11 +1,34 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
+from sqlalchemy import inspect, text
 
 from config import Config
 from extensions import db, jwt
 from auth import auth_bp
 from decorators import roles_required
 from models import User, Role
+
+
+def ensure_database_schema():
+    """Add missing columns for older database instances created before role/status fields existed."""
+    inspector = inspect(db.engine)
+    tables = set(inspector.get_table_names())
+
+    if "users" in tables:
+        user_columns = {col["name"] for col in inspector.get_columns("users")}
+        if "role" not in user_columns:
+            db.session.execute(text("ALTER TABLE users ADD COLUMN role VARCHAR(20) NOT NULL DEFAULT 'STUDENT'"))
+        if "status" not in user_columns:
+            db.session.execute(text("ALTER TABLE users ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE'"))
+        if "created_at" not in user_columns:
+            db.session.execute(text("ALTER TABLE users ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"))
+
+    if "password_reset_tokens" in tables:
+        token_columns = {col["name"] for col in inspector.get_columns("password_reset_tokens")}
+        if "used_at" not in token_columns:
+            db.session.execute(text("ALTER TABLE password_reset_tokens ADD COLUMN used_at TIMESTAMP NULL"))
+
+    db.session.commit()
 
 
 def create_app():
@@ -21,6 +44,7 @@ def create_app():
 
     with app.app_context():
         db.create_all()
+        ensure_database_schema()
 
     @app.route("/")
     def home():

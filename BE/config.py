@@ -5,11 +5,12 @@ from datetime import timedelta
 class Config:
     SECRET_KEY = os.environ.get("SECRET_KEY", "change-me-in-production")
 
-    # PostgreSQL connection string.
-    # Format: postgresql+psycopg2://<user>:<password>@<host>:<port>/<database>
+    # M?c d?nh d˘ng SQLite trong mÙi tru?ng dev local d? khÙng c?n PostgreSQL.
+    # N?u cÛ DATABASE_URL thÏ uu tiÍn d˘ng gi· tr? dÛ.
+    sqlite_db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "instance", "adaptive_lms.db"))
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         "DATABASE_URL",
-        "postgresql+psycopg2://postgres:1234@localhost:5432/classbridge",
+        f"sqlite:///{sqlite_db_path}",
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
@@ -18,8 +19,7 @@ class Config:
     JWT_HEADER_NAME = "Authorization"
     JWT_HEADER_TYPE = "Bearer"
 
-    # Y√™u c·∫ßu "ƒëƒÉng nh·∫≠p 1 l·∫ßn": access token s·ªëng l√¢u (30 ng√†y) thay v√¨
-    # h·∫øt h·∫°n sau v√†i ph√∫t/gi·ªù nh∆∞ m·∫∑c ƒë·ªãnh, ƒë·ªÉ ng∆∞·ªùi d√πng kh√¥ng ph·∫£i
-    # ƒëƒÉng nh·∫≠p l·∫°i m·ªói khi m·ªü l·∫°i trang.
+    # YÍu c?u "dang nh?p 1 l?n": access token s?ng l‚u (30 ng‡y) thay vÏ
+    # h?t h?n sau v‡i ph˙t/gi? nhu m?c d?nh, d? ngu?i d˘ng khÙng ph?i
+    # dang nh?p l?i m?i khi m? l?i trang.
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=30)
-
